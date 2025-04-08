@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Research Assistant</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><i class="fas fa-chart-line"></i> Market Research Assistant</h1>
+      <p>AI-Powered Business Insights</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-section">
+      <h2>Generate Business Insights</h2>
+      <div class="search-container">
+        <form id="analysis-form">
+          <div class="form-group">
+            <label for="query">Research Query</label>
+            <input type="text" id="query" name="query" placeholder="Enter your research question" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="industry">Industry</label>
+              <select id="industry" name="industry">
+                <option value="">Select Industry</option>
+                <option value="tech">Technology</option>
+                <option value="finance">Finance</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="retail">Retail</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="company">Company (Optional)</label>
+              <input type="text" id="company" name="company" placeholder="Enter company name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="timeframe">Timeframe</label>
+              <select id="timeframe" name="timeframe">
+                <option value="current">Current</option>
+                <option value="past_year">Past Year</option>
+                <option value="past_5_years">Past 5 Years</option>
+                <option value="future_outlook">Future Outlook</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="region">Region</label>
+              <select id="region" name="region">
+                <option value="global">Global</option>
+                <option value="north_america">North America</option>
+                <option value="europe">Europe</option>
+                <option value="asia_pacific">Asia Pacific</option>
+                <option value="latin_america">Latin America</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="additionalContext">Additional Context (Optional)</label>
+            <textarea id="additionalContext" name="additionalContext" placeholder="Add any specific focus areas or context for your analysis"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Generate Analysis</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="results-section" id="results-section" style="display: none;">
+      <div class="results-header">
+        <h2>Analysis Results</h2>
+        <button id="download-btn" class="btn btn-secondary"><i class="fas fa-download"></i> Download</button>
+      </div>
+      
+      <div class="results-container">
+        <div class="results-content" id="results-content"></div>
+        
+        <div class="results-sidebar">
+          <div class="news-container">
+            <h3>Related News</h3>
+            <div id="news-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <h2>Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-industry"></i></div>
+          <h3>Industry Analysis</h3>
+          <p>Get comprehensive insights on industry trends, market size, and growth projections.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-building"></i></div>
+          <h3>Company Insights</h3>
+          <p>Analyze specific companies, their market position, and competitive advantages.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-chess"></i></div>
+          <h3>Competitive Analysis</h3>
+          <p>Identify key competitors and understand their strengths and weaknesses.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-newspaper"></i></div>
+          <h3>News Integration</h3>
+          <p>Access the latest news and events impacting your industry or company.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="market-data-container">
+        <div class="market-data-card">
+          <h3>Stock Market</h3>
+          <div id="stockMarketData">
+            <div class="loading">Loading stock market data...</div>
+          </div>
+        </div>
+        <div class="market-data-card">
+          <h3>Cryptocurrency Market</h3>
+          <div id="cryptoMarketData">
+            <div class="loading">Loading cryptocurrency data...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Market Research Assistant. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="spinner"></div>
+    <p>Generating insights...</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html> 
