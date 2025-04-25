@@ -1,8 +1,8 @@
 // Function to fetch and display market data
 async function fetchMarketData() {
   try {
-    const stockResponse = await fetch('/api/market/stock/overview');
-    const cryptoResponse = await fetch('/api/market/crypto/overview');
+    const stockResponse = await fetch('http://localhost:3000/api/market/stock/overview');
+    const cryptoResponse = await fetch('http://localhost:3000/api/market/crypto/overview');
     
     if (!stockResponse.ok || !cryptoResponse.ok) {
       throw new Error('Failed to fetch market data');
