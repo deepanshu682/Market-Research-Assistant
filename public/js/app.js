@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Sending analysis request:', analysisData);
       
       // Send request to API
-      const response = await fetch('/api/analysis', {
+      const response = await fetch('http://localhost:3000/api/analysis', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
